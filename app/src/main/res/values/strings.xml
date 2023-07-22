@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SelfLearning</string>
+    <string name="title_activity_nav_graph">NavGraphActivity</string>
+    <string name="title_activity_room_database">RoomDatabaseActivity</string>
+    <string name="title_activity_coroutine">CoroutineActivity</string>
+    <string name="title_activity_dagger">DaggerActivity</string>
+    <string name="title_activity_content_provider">ContentProviderActivity</string>
+    <string name="title_activity_intents_and_intent_filters">IntentsAndIntentFiltersActivity
+    </string>
+</resources>

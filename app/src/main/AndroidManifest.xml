@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SelfLearning"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.IntentsAndIntentFiltersActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intents_and_intent_filters"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.ContentProviderActivity"
+            android:exported="false"
+            android:label="@string/title_activity_content_provider"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.DaggerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dagger"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.CoroutineActivity"
+            android:exported="false"
+            android:label="@string/title_activity_coroutine"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.RoomDatabaseActivity"
+            android:exported="false"
+            android:label="@string/title_activity_room_database"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.NavGraphActivity"
+            android:exported="false"
+            android:label="@string/title_activity_nav_graph"
+            android:theme="@style/Theme.SelfLearning" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.SelfLearning">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+<!--            "Intent filter" is a component in an Android app's AndroidManifest.xml file that specifies the types of intents that the app can handle. It defines the capabilities of the app, such as the actions, data types, and categories it can respond to. By declaring an intent filter, an app becomes eligible to receive and process specific types of intents from other apps or the system-->
+<!--            "Now our app is capable of receiving images from other apps i.e other apps can send images to our app of any type (jpeg,png,....) "-->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="image/*"/>
+                <category android:name="android.intent.category.DEFAULT"/>    //
+            </intent-filter>
+        </activity>
+    </application>
+<!--    "Now my app can send the data to other app of type text/plain"-->
+<!--    "Whenever our app wants to send plain text , this will help to query the apps that support text/plain-->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>
